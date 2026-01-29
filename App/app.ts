@@ -1,23 +1,47 @@
-enum produtoStatus {
-    Ativo = 1,
-    Inativo = 2,
-    EmBreve = 3,
+interface IAnimal{
+    nome: string;
+    idade: number;
+    estaVivo: boolean;
+
+    nascer(): void;
+    crescer(): void;
+    morrer(): void;
 }
 
-function checarProdutoStatus(status: produtoStatus){
-    switch(status){
-        case produtoStatus.Ativo:
-            return "Disponivel";
-            break;
-        case produtoStatus.Inativo:
-            return "Indisponivel";
-            break;
-        case produtoStatus.EmBreve:
-            return "Em breve";
-            break;
-        default:
-            return "Erro"
+let cachorro: IAnimal = {
+    nome: "Rex",
+    idade: 0,
+    estaVivo: false,
+    especie: "Canis Lupus Familiaris",
+    nascer(){
+        this.estaVivo = true;
+        return  console.log(`${this.nome} nasceu!`);
+    },
+    crescer(){
+        this.idade++;
+        console.log(`${this.nome} agora tem ${this.idade} anos.`);
+    },
+    morrer(){
+        this.estaVivo = false;
+        console.log(`${this.nome} morreu :(`);
     }
 }
 
-console.log(checarProdutoStatus(produtoStatus.Inativo));
+cachorro.nascer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.morrer();
+
+interface IAnimal{
+    especie: string;
+
+}

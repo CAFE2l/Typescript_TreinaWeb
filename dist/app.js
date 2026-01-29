@@ -1,23 +1,32 @@
 "use strict";
-var produtoStatus;
-(function (produtoStatus) {
-    produtoStatus[produtoStatus["Ativo"] = 1] = "Ativo";
-    produtoStatus[produtoStatus["Inativo"] = 2] = "Inativo";
-    produtoStatus[produtoStatus["EmBreve"] = 3] = "EmBreve";
-})(produtoStatus || (produtoStatus = {}));
-function checarProdutoStatus(status) {
-    switch (status) {
-        case produtoStatus.Ativo:
-            return "Disponivel";
-            break;
-        case produtoStatus.Inativo:
-            return "Indisponivel";
-            break;
-        case produtoStatus.EmBreve:
-            return "Em breve";
-            break;
-        default:
-            return "Erro";
+let cachorro = {
+    nome: "Rex",
+    idade: 0,
+    estaVivo: false,
+    especie: "Canis Lupus Familiaris",
+    nascer() {
+        this.estaVivo = true;
+        return console.log(`${this.nome} nasceu!`);
+    },
+    crescer() {
+        this.idade++;
+        console.log(`${this.nome} agora tem ${this.idade} anos.`);
+    },
+    morrer() {
+        this.estaVivo = false;
+        console.log(`${this.nome} morreu :(`);
     }
-}
-console.log(checarProdutoStatus(produtoStatus.Inativo));
+};
+cachorro.nascer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.crescer();
+cachorro.morrer();
