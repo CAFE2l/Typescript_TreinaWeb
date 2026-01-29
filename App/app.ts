@@ -1,8 +1,5 @@
-let nome: string;
-let idade: number;
-let sobrenome: string;
+let a: number[] = [1,2,3];
 
-nome = "joao";
-sobrenome = "silva";
-idade = 16;
-console.log(`O nome é ${nome} ${sobrenome} e a idade é ${idade}`);
+
+
+console.log(a);
