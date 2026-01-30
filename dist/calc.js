@@ -1,11 +1,9 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const calc = {
     soma: (a, b) => a + b,
     subtracao: (a, b) => a - b,
     multiplicacao: (a, b) => a * b,
     divisao: (a, b) => a / b
 };
-console.log(calc.soma(10, 20));
-console.log(calc.subtracao(10, 20));
-console.log(calc.multiplicacao(10, 20));
-console.log(calc.divisao(10, 20));
+exports.default = calc;
