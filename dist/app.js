@@ -23,8 +23,25 @@ class Animal {
     }
     ;
 }
-let cachorro = new Animal('Totó');
-cachorro.nascer();
-cachorro.crescer();
-cachorro.crescer();
-cachorro.morrer();
+var Terrestres;
+(function (Terrestres) {
+    class Cachorro extends Animal {
+        correr() {
+            console.log(`${this.nome} está correndo!`);
+        }
+    }
+    Terrestres.Cachorro = Cachorro;
+    Terrestres.cachorro = new Cachorro("gorda");
+})(Terrestres || (Terrestres = {}));
+var Aquaticos;
+(function (Aquaticos) {
+    class Golfinho extends Animal {
+        nadar() {
+            console.log(`${this.nome} está nadando!`);
+        }
+    }
+    Aquaticos.Golfinho = Golfinho;
+    Aquaticos.golfinho = new Golfinho("Gozador");
+})(Aquaticos || (Aquaticos = {}));
+Terrestres.cachorro.correr();
+Aquaticos.golfinho.nadar();

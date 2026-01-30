@@ -40,12 +40,34 @@ class Animal implements IAnimal{
         this.idade++;
         console.log(`${this.nome} agora tem ${this.idade} anos.`);
     };
+
 }
 
 
 
-let cachorro = new Animal('Totó');
-cachorro.nascer();
-cachorro.crescer();
-cachorro.crescer();
-cachorro.morrer();
+namespace Terrestres{
+    export class Cachorro extends Animal{
+        correr(){
+            console.log(`${this.nome} está correndo!`);
+        }
+}
+
+    export let cachorro = new Cachorro("gorda");
+
+}
+
+namespace Aquaticos{
+   export class Golfinho extends Animal{
+        nadar(){
+            console.log(`${this.nome} está nadando!`);
+        }
+    }
+
+    export let golfinho = new Golfinho("Gozador");
+
+}
+
+
+
+Terrestres.cachorro.correr();
+Aquaticos.golfinho.nadar();
