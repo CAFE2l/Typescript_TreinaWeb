@@ -11,38 +11,41 @@ interface IAnimal{
 
 
 class Animal implements IAnimal{
-    nome: string;
+    readonly nome: string;
     idade: number;
-    estaVivo: boolean;
+    private _estaVivo: boolean;
+
+    get estaVivo(): boolean{
+        return this._estaVivo;
+    }
+
 
     constructor(nome: string){
         this.nome = nome;
         this.idade = 0;
-        this.estaVivo = false;
+        this._estaVivo = false;
     }
 
      nascer(){
-        this.estaVivo = true;
+        this._estaVivo = true;
         return  console.log(`${this.nome} nasceu!`);
     };
+
+
+    morrer(){
+        this._estaVivo = false;
+        return console.log(`${this.nome} morreu :(`);
+    }
     crescer(){
         this.idade++;
         console.log(`${this.nome} agora tem ${this.idade} anos.`);
     };
-    morrer(){
-        this.estaVivo = false;
-        console.log(`${this.nome} morreu :(`);
-    };
 }
+
+
 
 let cachorro = new Animal('Totó');
 cachorro.nascer();
 cachorro.crescer();
 cachorro.crescer();
 cachorro.morrer();
-
-let gato = new Animal("Simba");
-gato.nascer();
-gato.crescer();
-gato.crescer();
-gato.morrer();
